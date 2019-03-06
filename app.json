@@ -1,0 +1,31 @@
+{
+    "pages": [
+        "pages/action/action",
+        "pages/index/index",
+        "pages/mine/mine",
+        "pages/template/nav/nav"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "ColorUI",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "backgroundColor": "#ffffff",
+        "color": "#979795",
+        "selectedColor": "#1c1c1b",
+        "list": [
+            {
+                "pagePath": "pages/index/index"
+            },
+            {
+                "pagePath": "pages/action/action"
+            },
+            {
+                "pagePath": "pages/mine/mine"
+            }
+        ]
+    }
+}

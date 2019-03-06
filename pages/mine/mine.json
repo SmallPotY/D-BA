@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "nav": "../template/nav/nav"
+    }
+}

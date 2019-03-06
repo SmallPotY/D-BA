@@ -1,0 +1,50 @@
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('http://upload.univs.cn/2013/0321/thumb_940__1363844991924.jpg')">
+    <view class='padding-xl text-white'>
+        <view class='padding-xs text-xl'>
+            无兄弟,不篮球
+        </view>
+        <view class='padding-xs'>
+            No basketball, No brothers.
+        </view>
+    </view>
+</view>
+
+<view class='engagement '>
+    <view class="cu-bar bg-white solid-bottom margin-top">
+        <view class='action'>
+
+            <text class='icon-hotfill text-orange '></text> 等你来战
+        </view>
+        <view class="cu-form-group">
+            <view class='title'>更多 ></view>
+        </view>
+    </view>
+
+    <view class="cu-list menu sm-border card-menu margin-top engagement-img" wx:for="{{waitResponse}}" wx:key="{{item}}">
+        <view class="bg-img padding-top-xl " style="background-image: url('{{item.img}}')">
+
+
+            <image src='../../static/icon/战斗.png' class='png fl cu-avatar lg round solids' mode='widthFix'></image>
+            <image src='../../static/img/vs.png' class="vs-img fl"></image>
+            <!-- <image src='../../static/img/challengeTeam.jpg' class='png fl cu-avatar lg round solids' mode='widthFix'></image> -->
+            <view class="cu-avatar radius lg  fl">
+                <text>?</text>
+            </view>
+
+            <view class='bg-shadeBottom padding padding-right-xl aligh-right'>
+                {{item.team_name}}
+                <view class='aligh-right'>
+                    {{item.place}}
+                </view>
+                <view class='aligh-right'>
+                    {{item.time}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+</view>
+
+<nav>
+</nav>

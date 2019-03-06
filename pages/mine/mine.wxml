@@ -1,0 +1,46 @@
+<view class='UCenter-bg'>
+    <image src='/static/img/default_avatar.jpg' class='png cu-avatar xl round solids' mode='widthFix'></image>
+
+    <view class='text-xl'>{{userInfo.team}} 
+        <text class='text-df'>{{userInfo.professional}}</text>
+    </view>
+    <view class='margin-top-sm'>
+        <text>{{userInfo.name}}</text>
+    </view>
+    <image src='/static/img/wave.gif' mode='scaleToFill' class='gif-wave'></image>
+</view>
+
+
+<view class='padding flex text-center text-grey bg-white shadow-warp'>
+
+    <view class='flex flex-sub flex-direction solid-right' wx:for="{{infoRmation}}" wx:key="{{item}}">
+        <view class="margin-top-sm">
+            <image src='{{item.iconPath}}' class='png small-pic' mode='aspectFit'></image>
+        </view>
+        {{ item.text}}
+    </view>
+
+
+</view>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+
+
+    <view class="cu-item arrow" wx:for="{{url_path}}" wx:key="{{item}}">
+        <navigator class='content' url='{{item.pagePath}}' hover-class='none'>
+            <image src='{{item.iconPath}}' class='png' mode='aspectFit'></image>
+            <text class='text-grey'>{{item.text}}</text>
+        </navigator>
+    </view>
+
+
+</view>
+
+<view class='cu-tabbar-height'></view>
+
+
+<nav>
+    <view slot="page1">
+        首页
+    </view>
+</nav>
