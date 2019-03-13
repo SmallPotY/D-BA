@@ -1,7 +1,8 @@
 {
     "pages": [
-        "pages/action/action",
         "pages/index/index",
+        
+        "pages/action/action",
         "pages/mine/mine",
         "pages/template/nav/nav"
     ],

@@ -41,3 +41,16 @@
     width: 90rpx;
     height: 90rpx
 }
+
+
+.opacity{
+    opacity:0.75;
+}
+
+.challenger{
+    border-radius:50%;
+}
+
+.ring{
+    margin-left: 15rpx;
+}

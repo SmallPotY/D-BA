@@ -9,7 +9,7 @@ Page({
             {   
                 'id':1,
                 'team_name':'恒大队',
-                'team_img':'',
+                'team_img':'http://img.72qq.com/file/201612/14/d6322a7cf9.jpg',
                 'time':'2019.3.7 周六 15:00-21:00',
                 'place':'广州体育馆',
                 'img':'https://img.chinatimes.com/newsphoto/2016-06-25/656/b25a00_p_02_02.jpg'
@@ -17,7 +17,7 @@ Page({
             {
                 'id': 2,
                 'team_name': '巴西队',
-                'team_img': '',
+                'team_img': 'http://img.72qq.com/file/201612/14/68c8be3b85.jpg',
                 'time': '2019.5.7 周六 01:00-21:00',
                 'place': '天河体育馆',
                 'img': 'https://img.chinatimes.com/newsphoto/2016-07-16/656/20160716004217.jpg'
@@ -25,7 +25,7 @@ Page({
             {
                 'id': 3,
                 'team_name': '火箭队',
-                'team_img': '',
+                'team_img': 'http://img.72qq.com/file/201703/24/e52b506e3d.jpg',
                 'time': '2019.8.7 周六 15:00-21:00',
                 'place': '花都体育馆',
                 'img': 'http://seopic.699pic.com/photo/50068/0037.jpg_wh1200.jpg'

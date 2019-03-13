@@ -41,6 +41,6 @@
 
 <nav>
     <view slot="page1">
-        首页
+        我的
     </view>
 </nav>

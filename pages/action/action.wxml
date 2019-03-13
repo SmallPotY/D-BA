@@ -10,9 +10,9 @@
 </view>
 
 <view class='engagement '>
-    <view class="cu-bar bg-white solid-bottom margin-top">
-        <view class='action'>
 
+    <view class="cu-bar bg-white solid-bottom margin-top  ">
+        <view class='action'>
             <text class='icon-hotfill text-orange '></text> 等你来战
         </view>
         <view class="cu-form-group">
@@ -24,10 +24,9 @@
         <view class="bg-img padding-top-xl " style="background-image: url('{{item.img}}')">
 
 
-            <image src='../../static/icon/战斗.png' class='png fl cu-avatar lg round solids' mode='widthFix'></image>
+            <image src='{{item.team_img}}' class='png fl cu-avatar lg round ring' mode='widthFix'></image>
             <image src='../../static/img/vs.png' class="vs-img fl"></image>
-            <!-- <image src='../../static/img/challengeTeam.jpg' class='png fl cu-avatar lg round solids' mode='widthFix'></image> -->
-            <view class="cu-avatar radius lg  fl">
+            <view class="cu-avatar radius lg fl opacity challenger">
                 <text>?</text>
             </view>
 

@@ -1,5 +1,6 @@
 {
     "usingComponents": {
         "nav": "../template/nav/nav"
-    }
+    },
+    "disableScroll":true
 }

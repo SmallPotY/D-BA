@@ -3,54 +3,86 @@
 const app = getApp()
 
 Page({
-  data: {
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
-    motto: 'Hi 开发者！',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
+    data: {
+        StatusBar: app.globalData.StatusBar,
+        CustomBar: app.globalData.CustomBar,
+        Custom: app.globalData.Custom,
+        hasUserInfo: false,
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        TabCur: 1,
+        scrollLeft: 0,
+        scrollTop: 0,
+        side_top: 200,
+        TabCur: 0,
+        iconList: [{
+                iconPath: '../../static/icon/招募.png',
+                path: '',
+                name: '招募'
+            },
+            {
+                iconPath: '../../static/icon/挑战.png',
+                path: '',
+                name: '约战'
+            },
+            {
+                iconPath: '../../static/icon/发布场地.png',
+                path: '',
+                name: '发布场地'
+            },
+            {
+                iconPath: '../../static/icon/荣誉.png',
+                path: '',
+                name: '排名'
+            },
+            {
+                iconPath: '../../static/icon/动态.png',
+                path: '',
+                name: '动态'
+            },
+        ],
+    },
+
+    /**
+     * 打开抽屉
+     */
+    showModal(e) {
         this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+            modalName: e.currentTarget.dataset.target,
+            side_top: this.data.scrollTop + 200,
         })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+
+    },
+    /**
+     * 关上抽屉
+     */
+    hideModal(e) {
+        this.setData({
+            modalName: null,
+        })
+        
+    },
+
+    /**
+     * 监听滚动条
+     */
+    onPageScroll: function(e) {
+        let old_scrollTop = this.data.scrollTop
+        // console.log(e.scrollTop) //这个就是滚动到的位置,可以用这个位置来写判断
+        if (this.modalName)
+        this.setData({
+            scrollTop: e.scrollTop
+        })
+
+    },
+
+    /**
+     * 选项卡切换
+     */
+    tabSelect(e) {
+        console.log(e);
+        this.setData({
+            TabCur: e.currentTarget.dataset.id,
+        })
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
+
 })

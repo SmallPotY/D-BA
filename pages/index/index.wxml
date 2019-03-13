@@ -1,27 +1,107 @@
-<view class='cu-custom' style="height:{{CustomBar}}px;">
-  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-    <view class='content' style='top:{{StatusBar}}px;'>ColorUI 空白模板</view>
-  </view>
-</view>
-<view class="margin-xl padding-xl bg-white radius shadow-lg">
-  <view class="flex justify-center">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 获取头像昵称 </button>
-    <block wx:else>
-      <view class='text-center'>
-        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
-        <view class="padding">{{userInfo.nickName}}</view>
-      </view>
-    </block>
-  </view>
+<view class="cu-custom" style="height:{{CustomBar*1.5}}px;">
+    <view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar*1.5}}px;padding-top:{{StatusBar}}px;background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+
+        <view class='action drawer' hover-class="none" bindtap="showModal" data-target="viewModal" wx:if="{{modalName!='viewModal'}}">
+            <text class='icon-roundadd'></text> 发布
+        </view>
+        <view class='action ' hover-class="none" bindtap="hideModal" data-target="viewModal" wx:if="{{modalName=='viewModal'}}">
+            <text class='icon-forward'></text> 返回
+        </view>
+
+        <view>
+            <scroll-view scroll-x class="nav text-center tab-cur"  wx:if="{{modalName!='viewModal'}}">
+                <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="0">
+                    <text class="icon-{{0==TabCur?'newfill text-cyan':'new'}}"></text> 全部
+                </view>
+                <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="1">
+                    <text class="icon-{{1==TabCur?'likefill text-cyan':'like'}}"></text> 关注
+                </view>
+            </scroll-view>
+        </view>
+
+    </view>
+
 </view>
 
-<view class="text-center margin-top">
-  <text class="text-grey text-xl">{{motto}}</text>
+
+
+
+
+<view class="DrawerPage {{modalName=='viewModal'?'show':''}}" bindtap='hideModal'>
+
+
+    <view class="cu-bar bg-white">
+        <view class='action'>
+            <text class='icon-comment text-pink'></text> 话题&活动
+        </view>
+        <view class='action'>
+            更多 >
+        </view>
+    </view>
+
+    <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+        <swiper-item wx:for="{{4}}" wx:key>
+            <image src="https://image.weilanwl.com/img/4x3-{{index+1}}.jpg" mode='aspectFill'></image>
+        </swiper-item>
+    </swiper>
+
+
+    <view class="cu-bar bg-white">
+        <view class='action'>
+            <text class='icon-title text-pink'></text> 动态
+        </view>
+    </view>
+    <view class="cu-card dynamic no-card card-main">
+        <view wx:for="{{5}}" wx:key class="cu-item shadow">
+            <view class="cu-list menu menu-avatar">
+                <view class="cu-item">
+                    <view class="cu-avatar round lg" style="background-image:url(https://pic2.zhimg.com/80/a2f11b960bbc12d34f77e601fc85b892_hd.jpg);"></view>
+                    <view class='content flex-sub'>
+                        <view>姚明</view>
+                        <view class='text-gray text-sm flex justify-between'>
+                            2019年3月8日
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='text-content'>
+                是兄弟来找我
+            </view>
+            <view class="grid {{isCard?'col-3 grid-square':'col-1'}} flex-sub padding-lr">
+                <view class="bg-img {{isCard?'':'only-img'}}" style="background-image:url(https://pic3.zhimg.com/80/774b60015c91da4f83ea44b85aa410b2_hd.jpg);" wx:for="{{isCard?9:1}}" wx:key>
+                </view>
+            </view>
+            <view class='text-gray text-sm text-right padding'>
+                <text class="icon-attentionfill"></text> 10
+                <text class="icon-appreciatefill"></text> 20
+                <text class="icon-messagefill"></text> 30
+            </view>
+
+
+        </view>
+    </view>
 </view>
+
+
+
+<!-- 侧边栏 -->
+<view class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg share-btn" style='margin-top:{{side_top}}px'>
+        <view class="cu-list grid col-3 no-border">
+            <view class="cu-item" wx:for="{{iconList}}" wx:key>
+                <view>
+                    <image src='{{item.iconPath}}' class='png small-pic ' mode='aspectFit'></image>
+                </view>
+                <text>{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
 
 
 <nav>
-  <view slot="page1">
-    首页
-  </view>
+    <view slot="page1">
+        首页
+    </view>
 </nav>
